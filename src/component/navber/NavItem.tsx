@@ -14,7 +14,7 @@ const NavItem = async () => {
         </li>
       {data.map((cat:catetoryType, i:number) => (
         <li key={i}>
-          <Link href={`/${cat.slug}`}><span>{cat.icon}</span>{cat.nameBn}</Link>
+          <Link href={`/category/${cat.slug}`}><span>{cat.icon}</span>{cat.nameBn}</Link>
         </li>
       ))}
     </div>
