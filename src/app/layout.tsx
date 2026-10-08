@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navber from "@/component/navber/Navber";
 import Footer from "@/component/Footer";
+import BazarProvider from "@/context/BazarProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,11 +28,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme="light"
     >
       <body className="min-h-full flex flex-col">
+        <BazarProvider>
         <Navber/>
         <main>
         {children}
         </main>
         <Footer/>
+        </BazarProvider>
         </body>
     </html>
   );
