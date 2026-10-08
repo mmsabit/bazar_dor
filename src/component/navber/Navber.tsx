@@ -11,7 +11,7 @@ const Navber = () => {
     year: "numeric",
   });
   return (
-    <div>
+    <div className="bg-[#fafcfa]">
       <div className="navbar max-w-7xl mx-auto w-full">
         <div className="navbar-start">
           <div className="flex gap-3">
