@@ -66,7 +66,7 @@ const ProductPage = async ({
         <h2 className="text-lg font-bold text-gray-900 leading-tight">
           দামের সারসংক্ষেপ
         </h2>
-        <Count/>
+        <Count products={product.markets}/>
         <h2 className="text-lg font-bold text-gray-900 leading-tight">
           বাজারভিত্তিক আজকের দাম
         </h2>

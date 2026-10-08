@@ -1,6 +1,9 @@
-import React from "react";
+import { MarketType } from "@/type/type";
 
-const Count = () => {
+
+
+const Count = ({ products }: { products: MarketType[] }) => {
+    
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
         {/* সর্বনিম্ন দাম */}
@@ -8,7 +11,7 @@ const Count = () => {
         <p className="text-sm font-medium text-gray-600">সর্বনিম্ন দাম</p>
         <div className="my-2 flex items-baseline gap-2">
           <span className="text-3xl font-bold tracking-tight text-emerald-600">
-            ৫৯
+            
           </span>
           <span className="text-lg font-semibold text-emerald-600">টাকা</span>
         </div>
@@ -20,7 +23,7 @@ const Count = () => {
         <p className="text-sm font-medium text-gray-600">সর্বাধিক দাম</p>
         <div className="my-2 flex items-baseline gap-2">
           <span className="text-3xl font-bold tracking-tight text-emerald-600">
-            73
+            
           </span>
           <span className="text-lg font-semibold text-emerald-600">টাকা</span>
         </div>
@@ -32,7 +35,7 @@ const Count = () => {
         <p className="text-sm font-medium text-gray-600">গড় দাম</p>
         <div className="my-2 flex items-baseline gap-2">
           <span className="text-3xl font-bold tracking-tight text-emerald-600">
-            ৬৬
+            
           </span>
           <span className="text-lg font-semibold text-emerald-600">টাকা</span>
         </div>

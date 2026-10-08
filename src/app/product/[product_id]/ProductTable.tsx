@@ -1,7 +1,10 @@
-import { MarketType } from "@/type/type";
-import React from "react";
 
-const ProductTable = ({ products }: { products: MarketType[]   }) => {
+
+import { MarketType } from "@/type/type";
+
+
+const ProductTable = ({ products }: { products: MarketType[] }) => {
+ 
   return (
     <div>
       <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
@@ -17,16 +20,18 @@ const ProductTable = ({ products }: { products: MarketType[]   }) => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product, index) => (
-            <tr key={index}>
-              <td>{product.market}</td>
-              <td>{product.division}</td>
-              <td>{product.min}</td>
-              <td>{product.max}</td>
-              <td>{(product.min + product.max) / 2}</td>
-            </tr>))}
-            
-            
+            {products.map((product, index) => {
+              const Avg = (product.min + product.max) / 2;
+              return (
+                <tr key={index}>
+                  <td>{product.market}</td>
+                  <td>{product.division}</td>
+                  <td>{product.min}</td>
+                  <td>{product.max}</td>
+                  <td>{Avg}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
