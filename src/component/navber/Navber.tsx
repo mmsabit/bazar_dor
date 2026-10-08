@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavItem from "./NavItem";
 import Logo from "@/asset/logo.png";
+import Marquee from "./Marquee";
 
 const Navber = () => {
   const currentDate = new Date().toLocaleDateString("bn-BD", {
@@ -79,6 +80,9 @@ const Navber = () => {
             <NavItem />
           </ul>
         </div>
+      </div>
+      <div className="border border-x-0 border-y-base-300 py-3">
+        <Marquee/>
       </div>
     </div>
   );
