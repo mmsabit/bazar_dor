@@ -13,7 +13,7 @@ export interface MarketPriceType {
 }
 
 export interface PriceType {
-  dir: 'up' | 'down';
+  dir: "up" | "down";
   pct: number;
 }
 
@@ -32,4 +32,11 @@ export interface ProductType {
   lastMonth: number;
   change: PriceType;
   markets: MarketPriceType[];
+}
+
+export interface MarketType {
+  market: string;
+  division: string;
+  min: number;
+  max: number;
 }

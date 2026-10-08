@@ -1,9 +1,11 @@
 import { ProductType } from "@/type/type";
+import Link from "next/link";
 import { IoCaretDown, IoCaretUp } from "react-icons/io5";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
   return (
     <div>
+      <Link href={`/product/${product.id}`}>
       <div className=" w-full mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-5 flex flex-col justify-between font-sans">
         <div className="flex items-center space-x-4">
           <div className="w-16 h-16 bg-emerald-50/60 rounded-xl flex items-center justify-center p-2 shrink-0 text-2xl">
@@ -49,6 +51,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 };
