@@ -16,35 +16,35 @@ const HomeProduct = async () => {
   );
   return (
     <div>
-      <div className="lg:max-w-7xl mx-auto w-full max-w-9/10">
+      <div className="xl:max-w-7xl mx-auto w-full max-w-9/10">
         <div>
-          <h3 className="flex items-center text-[16px] lg:text-[20px] font-bold text-nowrap">
+          <h3 className="flex items-center text-[20px] font-bold text-nowrap">
             <IoCaretUp color="#DC2626 " /> আজ দাম বেড়েছে
           </h3>
-          <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 my-5">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 my-5">
             {priceHiked.map((item: ProductType, i: number) => (
               <ProductCard key={i} product={item} />
             ))}
           </div>
         </div>
         <div>
-          <h3 className="flex items-center text-[16px] lg:text-[20px] font-bold text-nowrap">
+          <h3 className="flex items-center text-[20px] font-bold text-nowrap">
             <IoCaretDown color="#047F39" /> আজ দাম কমেছে
           </h3>
-          <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 my-5">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 my-5">
             {priceDown.map((item: ProductType, i: number) => (
               <ProductCard key={i} product={item} />
             ))}
           </div>
         </div>
         <div className="my-10">
-          <h3 className="flex items-center text-[16px] lg:text-[20px] font-bold text-nowrap">
+          <h3 className="flex items-center text-[20px] font-bold text-nowrap">
             সব পণ্য
           </h3>
           <p className="text-[12px] lg:text-[16px] text-[#5f6761] my-2">
             মোট {data.length}টি পণ্য দেখানো হচ্ছে
           </p>
-          <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 my-5">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 my-5">
             {data.map((item: ProductType, i: number) => (
               <ProductCard key={i} product={item} />
             ))}

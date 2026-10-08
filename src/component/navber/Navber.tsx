@@ -75,7 +75,7 @@ const Navber = () => {
         </div>
       </div>
       <div className="border border-x-0 border-y-base-200">
-        <div className="w-7xl mx-auto hidden lg:flex">
+        <div className="lg:max-w-7xl max-w-9/10 w-full mx-auto hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <NavItem />
           </ul>
