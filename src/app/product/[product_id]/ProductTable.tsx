@@ -1,5 +1,6 @@
 
 
+import { toBanglaNumber } from "@/type/function";
 import { MarketType } from "@/type/type";
 
 
@@ -26,9 +27,9 @@ const ProductTable = ({ products }: { products: MarketType[] }) => {
                 <tr key={index}>
                   <td>{product.market}</td>
                   <td>{product.division}</td>
-                  <td>{product.min}</td>
-                  <td>{product.max}</td>
-                  <td>{Avg}</td>
+                  <td>{toBanglaNumber(product.min)} টাকা</td>
+                  <td>{toBanglaNumber(product.max)} টাকা</td>
+                  <td>{toBanglaNumber(Number(Avg.toFixed(0)))} টাকা</td>
                 </tr>
               );
             })}

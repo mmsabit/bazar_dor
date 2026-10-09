@@ -1,3 +1,4 @@
+import { toBanglaNumber } from "@/type/function";
 import { MarketType } from "@/type/type";
 
 const Count = ({ products }: { products: MarketType[] }) => {
@@ -13,7 +14,7 @@ const Count = ({ products }: { products: MarketType[] }) => {
       <div className="w-full max-w-sm rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
         <p className="text-sm font-medium text-gray-600">সর্বনিম্ন দাম</p>
         <div className="my-2 flex items-baseline gap-2">
-          <span className="text-3xl font-bold tracking-tight text-emerald-600">{min}</span>
+          <span className="text-3xl font-bold tracking-tight text-emerald-600">{toBanglaNumber(min)}</span>
           <span className="text-lg font-semibold text-emerald-600">টাকা</span>
         </div>
         <p className="text-xs text-gray-500">সবচেয়ে কম দামের বাজার</p>
@@ -23,7 +24,7 @@ const Count = ({ products }: { products: MarketType[] }) => {
       <div className="w-full max-w-sm rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
         <p className="text-sm font-medium text-gray-600">সর্বাধিক দাম</p>
         <div className="my-2 flex items-baseline gap-2">
-          <span className="text-3xl font-bold tracking-tight text-[#D03739]">{max}</span>
+          <span className="text-3xl font-bold tracking-tight text-[#D03739]">{toBanglaNumber(max)}</span>
           <span className="text-lg font-semibold text-[#D03739]">টাকা</span>
         </div>
         <p className="text-xs text-gray-500">সবচেয়ে বেশি দামের বাজার</p>
@@ -33,7 +34,7 @@ const Count = ({ products }: { products: MarketType[] }) => {
       <div className="w-full max-w-sm rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
         <p className="text-sm font-medium text-gray-600">গড় দাম</p>
         <div className="my-2 flex items-baseline gap-2">
-          <span className="text-3xl font-bold tracking-tight text-emerald-600">{avg.toFixed(2)}</span>
+          <span className="text-3xl font-bold tracking-tight text-emerald-600">{toBanglaNumber(Number(avg.toFixed(0)))}</span>
           <span className="text-lg font-semibold text-emerald-600">টাকা</span>
         </div>
         <p className="text-xs text-gray-500">প্রতি কেজি-এর হিসাবে</p>

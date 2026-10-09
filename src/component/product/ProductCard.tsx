@@ -1,8 +1,11 @@
+import { toBanglaNumber, translateUnit } from "@/type/function";
 import { ProductType } from "@/type/type";
 import Link from "next/link";
 import { IoCaretDown, IoCaretUp } from "react-icons/io5";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
+  
+
   return (
     <div>
       <Link href={`/product/${product.id}`}>
@@ -15,7 +18,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <h2 className="text-xl font-bold text-gray-900 leading-tight">
               {product.nameBn}
             </h2>
-            <p className="text-sm text-gray-500 mt-0.5">প্রতি কেজি</p>
+            <p className="text-sm text-gray-500 mt-0.5">প্রতি { translateUnit(product.unit)}</p>
           </div>
         </div>
 
@@ -24,7 +27,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <span className="text-xs text-gray-500 block mb-1">আজকের দাম</span>
             <div className="flex items-baseline space-x-1.5">
               <span className="text-2xl font-bold text-gray-900 tracking-tight">
-                {product.today}
+                {toBanglaNumber(product.today)}
               </span>
               <span className="text-sm font-medium text-gray-700">টাকা</span>
             </div>

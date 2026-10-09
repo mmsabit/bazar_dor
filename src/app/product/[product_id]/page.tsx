@@ -3,6 +3,7 @@ import { IoCaretUp, IoCaretDown } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
 import Count from "./Count";
 import ProductTable from "./ProductTable";
+import { toBanglaNumber, translateUnit } from "@/type/function";
 
 const ProductPage = async ({
   params,
@@ -34,20 +35,20 @@ const ProductPage = async ({
             <h2 className="text-[30px] font-bold text-gray-900 leading-tight">
               {product.nameBn}
             </h2>
-            <p className="text-sm text-gray-500 mt-0.5">প্রতি কেজি</p>
+            <p className="text-sm text-gray-500 mt-0.5">প্রতি {translateUnit(product.unit)}</p>
             <p className="text-sm text-gray-500 mt-0.5">
               {" "}
               {product.today > product.yesterday
-                ? `গতকালের তুলনায় আজ দাম বেড়েছে · ${product.today - product.yesterday}`
-                : `গতকালের তুলনায় আজ দাম কমেছে · ${product.yesterday - product.today}`}{" "}
+                ? `গতকালের তুলনায় আজ দাম বেড়েছে · ${toBanglaNumber(product.today - product.yesterday)}`
+                : `গতকালের তুলনায় আজ দাম কমেছে · ${toBanglaNumber(product.yesterday - product.today)}`}{" "}
               টাকা
             </p>
           </div>
         </div>
         <div className=" p-5 bg-[#f0f5f0] rounded-xl flex flex-col items-center justify-center gap-0.5">
           <p className="text-sm">আজকের দাম</p>
-          <h5 className="text-3xl font-bold text-gray-900">{product.today}</h5>
-          <p className="text-sm">টাকা / {product.unit}</p>
+          <h5 className="text-3xl font-bold text-gray-900">{toBanglaNumber(product.today)}</h5>
+          <p className="text-sm">টাকা / { translateUnit(product.unit)}</p>
 
           <p
             className={`w-full flex items-center justify-center gap-1 text-center font-semibold ${

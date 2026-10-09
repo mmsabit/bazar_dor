@@ -2,6 +2,7 @@ import { ProductType } from "@/type/type";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 import { IoCaretDown, IoCaretUp } from "react-icons/io5";
+import { toBanglaNumber, translateUnit } from "@/type/function";
 
 const Marquee = async () => {
   const res = await fetch(
@@ -18,7 +19,7 @@ const Marquee = async () => {
               <span className="me-2">{item.categoryIcon} </span>
               <span className="me-2">{item.nameBn} </span>
               <span>
-                {item.today} টাকা/{item.unit}
+                {toBanglaNumber(item.today)} টাকা/{translateUnit(item.unit)}
               </span>
               <span
                 className={`flex ms-2 items-center gap-1 ${

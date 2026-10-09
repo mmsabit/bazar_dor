@@ -1,3 +1,4 @@
+import { toBanglaNumber } from "@/type/function";
 import CatProducts from "./CatProducts";
 
 
@@ -20,7 +21,7 @@ const CategoryPage = async ({
           <div>
             <h3 className="text-[24px] font-bold">{data[0].categoryNameBn}</h3>
             <p className="text-[12px] lg:text-[16px] text-[#5f6761]">
-              {data.length}টি পণ্যের আজকের দাম ও পরিবর্তন
+              {toBanglaNumber(data.length)}টি পণ্যের আজকের দাম ও পরিবর্তন
             </p>
           </div>
         </div>

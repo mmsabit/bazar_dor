@@ -2,6 +2,7 @@ import Image from "next/image";
 import NavItem from "./NavItem";
 import Logo from "@/asset/logo.png";
 import Marquee from "./Marquee";
+import Link from "next/link";
 
 const Navber = () => {
   const currentDate = new Date().toLocaleDateString("bn-BD", {
@@ -15,18 +16,21 @@ const Navber = () => {
       <div className="navbar max-w-7xl mx-auto w-full">
         <div className="navbar-start">
           <div className="flex gap-3">
-            <Image
-              src={Logo}
-              alt="Logo"
-              width={50}
-              height={50}
-              className="lg:w-12 lg:h-12 w-8 h-8 object-contain"
-            ></Image>
+            <Link href="/" aria-label="Home page">
+              <Image
+                src={Logo}
+                alt="Logo"
+                width={50}
+                height={50}
+                className="lg:w-12 lg:h-12 w-8 h-8 object-contain"
+              />
+            </Link>
+
             <div className="">
-              <h3 className="lg:text-xl text-sm font-bold">বাজার দর</h3>
-              <p className="lg:text-[12px] text-[8px]">
-                {currentDate}
-              </p>
+              <Link href="/">
+                <h3 className="lg:text-xl text-sm font-bold">বাজার দর</h3>
+              </Link>
+              <p className="lg:text-[12px] text-[8px]">{currentDate}</p>
             </div>
           </div>
         </div>
@@ -82,7 +86,7 @@ const Navber = () => {
         </div>
       </div>
       <div className="border border-x-0 border-y-base-300 py-3">
-        <Marquee/>
+        <Marquee />
       </div>
     </div>
   );
