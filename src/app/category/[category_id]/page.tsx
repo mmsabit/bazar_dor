@@ -1,5 +1,5 @@
-import ProductCard from "@/component/product/ProductCard";
-import { ProductType } from "@/type/type";
+import CatProducts from "./CatProducts";
+
 
 const CategoryPage = async ({
   params,
@@ -24,23 +24,7 @@ const CategoryPage = async ({
             </p>
           </div>
         </div>
-        <div className=" gap-3 p-5 bg-[#fafcfa] rounded-3xl my-6 border border-base-300 items-center">
-          <fieldset>
-            <div className="flex justify-end gap-3 items-center">
-            <legend className="text-[14px] text-[#1d271fa7]">সাজান</legend>
-            <select defaultValue="ডিফল্ট" className="select max-w-43">
-              <option value="Default">ডিফল্ট</option>
-              <option value="Lowest">দাম কম থেকে বেশি</option>
-              <option value="Highest">দাম বেশি থেকে কম</option>              
-            </select>
-            </div>
-          </fieldset>
-        </div>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 mt-13 mb-25">
-          {data.map((item: ProductType, i: number) => (
-            <ProductCard key={i} product={item} />  
-          ))}
-        </div>
+        <CatProducts products={data} />
       </div>
     </div>
   );

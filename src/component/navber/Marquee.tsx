@@ -29,7 +29,7 @@ const Marquee = async () => {
                 {item.change.dir === "up"
                   ? item.change.pct
                   : item.change.pct * -1}
-                {}%
+                 %
               </span>
             </p>
           );
