@@ -5,7 +5,7 @@ import { IoCaretDown, IoCaretUp } from "react-icons/io5";
 
 const Marquee = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
+    `${process.env.BASE_URL}/products`,
   );
   const data = await res.json();
 

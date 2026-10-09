@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 const HomeProduct = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
+    `${process.env.BASE_URL}/products`,
   );
   const data = await res.json();
 

@@ -12,7 +12,7 @@ const ProductPage = async ({
   const { product_id } = await params;
 
   const response = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products/${product_id}`,
+    `${process.env.BASE_URL}/products/${product_id}`,
   );
   const product = await response.json();
   return (

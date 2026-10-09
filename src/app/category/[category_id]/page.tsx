@@ -9,7 +9,7 @@ const CategoryPage = async ({
   const { category_id } = await params;
 
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products?category=${category_id}`,
+    `${process.env.BASE_URL}/products?category=${category_id}`,
   );
   const data = await res.json();
   return (

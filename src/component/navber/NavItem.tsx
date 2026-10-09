@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NavItem = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/categories",
+    `${process.env.BASE_URL}/categories`,
   );
   const data = await res.json();
 
