@@ -3,6 +3,7 @@ import NavItem from "./NavItem";
 import Logo from "@/asset/logo.png";
 import Marquee from "./Marquee";
 import Link from "next/link";
+import NavBtn from "./NavBtn";
 
 const Navber = () => {
   const currentDate = new Date().toLocaleDateString("bn-BD", {
@@ -61,20 +62,12 @@ const Navber = () => {
             >
               <NavItem />
               <li>
-                <a className="btn btn-ghost my-4">সাইন ইন</a>
-              </li>
-              <li>
-                <a className="btn  bg-[#047F39] border-[#047F39] drop-shadow-[#047F39] text-white">
-                  সাইন আপ
-                </a>
+             <NavBtn />
               </li>
             </ul>
           </div>
           <div className="hidden lg:flex gap-5">
-            <a className="btn btn-ghost">সাইন ইন</a>
-            <a className="btn  bg-[#047F39] border-[#047F39] drop-shadow-[#047F39] text-white">
-              সাইন আপ
-            </a>
+            <NavBtn />
           </div>
         </div>
       </div>

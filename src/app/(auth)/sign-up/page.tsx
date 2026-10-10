@@ -3,7 +3,7 @@ import React from "react";
 
 const SignUpPage = () => {
   return (
-    <div className="flex min-h-[90vh] flex-col items-center justify-center">
+    <div className="flex min-h-[90vh] flex-col items-center justify-center py-20">
       <h2 className="text-3xl font-bold mb-2">অ্যাকাউন্ট তৈরি করুন</h2>
       <p className="text-lg text-[#1d271f9f] mb-6">
         বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
@@ -33,6 +33,9 @@ const SignUpPage = () => {
             className="input w-full"
             placeholder="পাসওয়ার্ড নিশ্চিত করুন"
           />
+
+          <label className="block text-[14px] mt-4">ফটো</label>
+          <input type="url" className="input w-full" placeholder="ফটোর লিঙ্ক দিন" />
 
           <button className="btn text-white py-5 bg-[#05893E] w-full mt-4">
             অ্যাকাউন্ট তৈরি করুন
