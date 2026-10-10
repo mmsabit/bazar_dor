@@ -9,24 +9,32 @@ import { toast, Bounce } from "react-toastify";
 const NavBtn = () => {
   const handleSignOut = async () => {
     await authClient.signOut();
-          toast.success("সাইন আউট সফল হয়েছে", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          });
+    toast.success("সাইন আউট সফল হয়েছে", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   const { data: session } = authClient.useSession();
   const user = session?.user;
   if (user) {
     return (
-      <div className="dropdown dropdown-hover focus:bg-transparent">
+      <div
+        className="dropdown dropdown-hover focus:bg-transparent bg-transparent"
+        onClick={() => {
+          const activeElement = document.activeElement;
+          if (activeElement instanceof HTMLElement) {
+            activeElement.blur();
+          }
+        }}
+      >
         <div tabIndex={0} role="button" className="flex items-center gap-3">
           <Image
             src={
@@ -52,8 +60,19 @@ const NavBtn = () => {
             </div>
 
             <div className="mt-2 flex flex-col gap-2">
-              <Link href={`/profile`} className="text-[14px] flex items-center gap-1"><IoPersonSharp size={16} /> প্রোফাইল</Link>
-              <button onClick={handleSignOut} className="w-fit flex items-center text-[#D03739] gap-1 cursor-pointer" type="button"><TbArrowBack size={16}/> সাইন আউট</button>
+              <Link
+                href={`/profile`}
+                className="text-[14px] flex items-center gap-1"
+              >
+                <IoPersonSharp size={16} /> প্রোফাইল
+              </Link>
+              <button
+                onClick={handleSignOut}
+                className="w-fit flex items-center text-[#D03739] gap-1 cursor-pointer"
+                type="button"
+              >
+                <TbArrowBack size={16} /> সাইন আউট
+              </button>
             </div>
           </div>
         </div>
@@ -61,7 +80,15 @@ const NavBtn = () => {
     );
   }
   return (
-    <div className="flex gap-3 lg:flex-row flex-col">
+    <div
+      className="flex gap-3 lg:flex-row flex-col focus:bg-transparent bg-transparent"
+      onClick={() => {
+        const activeElement = document.activeElement;
+        if (activeElement instanceof HTMLElement) {
+          activeElement.blur();
+        }
+      }}
+    >
       <Link href="/sign-in" className="btn btn-ghost">
         সাইন ইন
       </Link>

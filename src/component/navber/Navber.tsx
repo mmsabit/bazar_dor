@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NavItem from "./NavItem";
-import Logo from "@/asset/logo.png";
+import Logo from "@/asset/logo.svg";
 import Marquee from "./Marquee";
 import Link from "next/link";
 import NavBtn from "./NavBtn";
@@ -61,7 +61,7 @@ const Navber = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box right-0 mt-3 w-52 p-2 shadow"
             >
               <NavItem />
-              <li className="">
+              <li >
                 <NavBtn />
               </li>
             </ul>

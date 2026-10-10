@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 1080" width="1080" height="1080">
+ <g className="page" style="">
+  <rect x="0" y="0" width="1080" height="1080" fill="rgb(0, 0, 0, 0)">
+  </rect>
+  <g className="element" id="JjhXvMHIS-" transform="translate(0, 0) rotate(0)" opacity="1" style="transform-origin:top left; filter:;">
+   <g>
+    
+    <defs>
+    <clipPath id="clip-JjhXvMHIS-">
+      <path d="M 0 309 A 309 309 0 0 1 309 0 L 771 0 A 309 309 0 0 1 1080 309 L 1080 771 A 309 309 0 0 1 771 1080 L 309 1080 A 309 309 0 0 1 0 771 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Path for the fill -->
+  <path d="M 0 309 A 309 309 0 0 1 309 0 L 771 0 A 309 309 0 0 1 1080 309 L 1080 771 A 309 309 0 0 1 771 1080 L 309 1080 A 309 309 0 0 1 0 771 Z" fill="rgba(4,127,57,1)"/>
+
+  <!-- Path for the stroke, clipped by the star path -->
+  <path d="M 0 309 A 309 309 0 0 1 309 0 L 771 0 A 309 309 0 0 1 1080 309 L 1080 771 A 309 309 0 0 1 771 1080 L 309 1080 A 309 309 0 0 1 0 771 Z" fill="none" stroke="#0c0c0c" stroke-width="0" clip-path="url(#clip-JjhXvMHIS-)" stroke-dasharray=""/>
+    
+  </g>
+  </g>
+  <g className="element" id="POLGvxDfL_" transform="translate(278.668732, 278.668732) rotate(0)" opacity="1" style="transform-origin:top left; filter:;">
+   <g>
+    <g>
+     <defs>
+      <clipPath id="clip-POLGvxDfL_">
+       <rect x="0" y="0" width="522.662536" height="522.662536">
+       </rect>
+      </clipPath>
+     </defs>
+     <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgZGF0YS1pY29uPSJjYXJ0IiBkYXRhLWNvbnRhaW5lci10cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDEpIiB2aWV3Qm94PSIwIDAgMTYgMTYiIHg9IjBweCIgeT0iMHB4Ij48cGF0aCBkPSJNMCAwdjFoMi41MzFsLjc4MSAzLjYyNS41IDMuMzQ0LS41OTQgMy4wNjNjLS42OTguMTI4LTEuMjE5LjczNC0xLjIxOSAxLjQ2OSAwIC44MjguNjcyIDEuNSAxLjUgMS41LjY5IDAgMS4yNjMtLjQ1OSAxLjQzOC0xLjA5NGg3LjEyNWMuMTc1LjYzNS43NDcgMS4wOTQgMS40MzggMS4wOTQuODI4IDAgMS41LS42NzIgMS41LTEuNXMtLjY3Mi0xLjUtMS41LTEuNWMtLjYyMSAwLTEuMTQ3LjM2OC0xLjM3NS45MDZoLTcuMjVjLS4xMzMtLjMxNC0uMzU5LS41NTctLjY1Ni0uNzE5bC40MzgtMi4xODhoOS44NDRjLjMgMCAuNS0uMi41LS41bC45MDYtNmMuMS0uMy0uMTA2LS41LS40MDYtLjVoLTExLjY4OGwtLjMxMy0xLjQwNmgtLjAzMWMtLjAyNy0uMTIzLS4wNzMtLjIyMS0uMTI1LS4yODEtLjA2OS0uMDgtLjEyMy0uMTQ5LS4xODgtLjE4OC0uMTMtLjA3OC0uMjUyLS4xMjUtLjQ2OS0uMTI1aC0yLjY4OHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMSkiIHN0eWxlPSJmaWxsOiByZ2JhKDI1NSwyNTUsMjU1LDEpOyIvPjwvc3ZnPg==" x="0" y="0" width="522.662536" height="522.662536" preserveAspectRatio="none" clip-path="url(#clip-POLGvxDfL_)">
+     </image>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
