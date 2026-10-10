@@ -1,7 +1,117 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import React from "react";
+import { redirect } from "next/navigation";
+import { useState } from "react";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { Bounce, toast } from "react-toastify";
 
 const SignUpPage = () => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const user = Object.fromEntries(formData.entries()) as Record<
+      string,
+      string
+    >;
+
+    if (user.user_password !== user.user_confirm_password) {
+      toast.error("পাসওয়ার্ড মিলছে না।", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      return;
+    }
+
+    const { data, error } = await authClient.signUp.email({
+      name: user.user_name,
+      email: user.user_email,
+      password: user.user_password,
+      callbackURL: "/",
+    });
+
+    if (data) {
+      toast.success("সাইন আপ সফল হয়েছে", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      redirect("/");
+    }
+
+    if (error) {
+      toast.error(error.message, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
+
+  const GoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+
+    if (data) {
+      toast.success("সাইন ইন সফল হয়েছে", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
+
+  const GithubsignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+    });
+    if (data) {
+      toast.success("সাইন ইন সফল হয়েছে", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
+
+  const [showPassword, setShowpassword] = useState(false);
+
+  const handleShow = () => {
+    setShowpassword(!showPassword);
+  };
   return (
     <div className="flex min-h-[90vh] flex-col items-center justify-center py-20">
       <h2 className="text-3xl font-bold mb-2">অ্যাকাউন্ট তৈরি করুন</h2>
@@ -9,35 +119,67 @@ const SignUpPage = () => {
         বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
       </p>
       <fieldset className="fieldset bg-[#fafcfa] border-base-300 rounded-box w-9/10 max-w-115 border p-6">
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <label className="block text-[14px] mt-3">নাম</label>
-          <input type="text" className="input w-full" placeholder="আপনার নাম" />
+          <input
+            name="user_name"
+            type="text"
+            className="input w-full"
+            placeholder="আপনার নাম"
+          />
 
           <label className="block text-[14px] mt-3 ">ইমেইল</label>
           <input
             type="email"
             className="input w-full"
             placeholder="আপনার ইমেইল"
+            name="user_email"
           />
 
           <label className="block text-[14px] mt-3">পাসওয়ার্ড</label>
-          <input
-            type="password"
-            className="input w-full"
-            placeholder="পাসওয়ার্ড দিন"
-          />
-
-          <label className="block text-[14px] mt-4">পাসওয়ার্ড নিশ্চিত করুন</label>
-          <input
-            type="password"
-            className="input w-full"
-            placeholder="পাসওয়ার্ড নিশ্চিত করুন"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="input w-full"
+              placeholder="পাসওয়ার্ড দিন"
+              name="user_password"
+            />
+            <button
+              className="absolute right-3 top-3 cursor-pointer"
+              onClick={handleShow}
+              type="button"
+            >
+              {showPassword ? <FaEyeSlash size={17} /> : <FaEye size={17} />}
+            </button>
+          </div>
+          <label className="block text-[14px] mt-4">
+            পাসওয়ার্ড নিশ্চিত করুন
+          </label>
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="input w-full"
+              placeholder="পাসওয়ার্ড নিশ্চিত করুন"
+              name="user_confirm_password"
+            />
+            <button
+              className="absolute right-3 top-3 cursor-pointer"
+              onClick={handleShow}
+              type="button"
+            >
+              {showPassword ? <FaEyeSlash size={17} /> : <FaEye size={17} />}
+            </button>
+          </div>
 
           <label className="block text-[14px] mt-4">ফটো</label>
-          <input type="url" className="input w-full" placeholder="ফটোর লিঙ্ক দিন" />
+          <input
+            type="url"
+            className="input w-full"
+            placeholder="ফটোর লিঙ্ক দিন"
+            name="user_photo"
+          />
 
-          <button className="btn text-white py-5 bg-[#05893E] w-full mt-4">
+          <button type="submit" className="btn text-white py-5 bg-[#05893E] w-full mt-4">
             অ্যাকাউন্ট তৈরি করুন
           </button>
         </form>
@@ -46,7 +188,10 @@ const SignUpPage = () => {
           <hr className="border border-base-300 w-full" />
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-2 mt-4">
-          <button className="btn bg-white text-black border-[#e5e5e5]">
+          <button
+            onClick={GoogleSignIn}
+            className="btn bg-white text-black border-[#e5e5e5]"
+          >
             <svg
               aria-label="Google logo"
               width="16"
@@ -76,7 +221,10 @@ const SignUpPage = () => {
             </svg>
             Google দিয়ে চালিয়ে যান
           </button>
-          <button className="btn bg-black text-white border-black">
+          <button
+            onClick={GithubsignIn}
+            className="btn bg-black text-white border-black"
+          >
             <svg
               aria-label="GitHub logo"
               width="16"
@@ -93,7 +241,8 @@ const SignUpPage = () => {
           </button>
         </div>
         <div className="mt-4 text-center text-[14px]">
-          অ্যাকাউন্ট নেই? <Link href="/sign-in" className="text-[#05893E] hover:underline">
+          অ্যাকাউন্ট নেই?{" "}
+          <Link href="/sign-in" className="text-[#05893E] hover:underline">
             সাইন ইন করুন
           </Link>
         </div>

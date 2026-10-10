@@ -1,7 +1,99 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { toast, Bounce } from "react-toastify";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 
 const SignInPage = () => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const user = Object.fromEntries(formData.entries()) as Record<
+      string,
+      string
+    >;
+
+    const { data, error } = await authClient.signIn.email({
+      email: user.user_email,
+      password: user.user_password,
+      callbackURL: "/",
+    });
+
+    if (data) {
+      toast.success("সাইন ইন সফল হয়েছে", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+
+    if (error) {
+      toast.error(error.message, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
+
+  const GoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+
+    if (data) {
+      toast.success("সাইন ইন সফল হয়েছে", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
+
+  const GithubsignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+    });
+    if (data) {
+      toast.success("সাইন ইন সফল হয়েছে", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    }
+  };
+
+  const [showPassword, setShowpassword] = useState(false);
+
+  const handleShow = () => {
+    setShowpassword(!showPassword);
+  };
   return (
     <div className="flex min-h-[90vh] flex-col items-center justify-center">
       <h2 className="text-3xl font-bold mb-2">সাইন ইন</h2>
@@ -9,22 +101,31 @@ const SignInPage = () => {
         বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
       </p>
       <fieldset className="fieldset bg-[#fafcfa] border-base-300 rounded-box w-9/10 max-w-115 border p-6">
-        <form action="">
-
+        <form onSubmit={handleSubmit}>
           <label className="block text-[14px] mt-3 ">ইমেইল</label>
           <input
             type="email"
             className="input w-full"
             placeholder="আপনার ইমেইল"
+            name="user_email"
           />
 
           <label className="block text-[14px] mt-3">পাসওয়ার্ড</label>
-          <input
-            type="password"
-            className="input w-full"
-            placeholder="পাসওয়ার্ড দিন"
-          />
-
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="input w-full"
+              placeholder="পাসওয়ার্ড দিন"
+              name="user_password"
+            />
+            <button
+              className="absolute right-3 top-3 cursor-pointer"
+              onClick={handleShow}
+              type="button"
+            >
+              {showPassword ? <FaEyeSlash size={17} /> : <FaEye size={17} />}
+            </button>
+          </div>
           <button className="btn text-white py-5 bg-[#05893E] w-full mt-4">
             সাইন ইন করুন
           </button>
@@ -34,7 +135,10 @@ const SignInPage = () => {
           <hr className="border border-base-300 w-full" />
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-2 mt-4">
-          <button className="btn bg-white text-black border-[#e5e5e5]">
+          <button
+            onClick={GoogleSignIn}
+            className="btn bg-white text-black border-[#e5e5e5]"
+          >
             <svg
               aria-label="Google logo"
               width="16"
@@ -64,7 +168,10 @@ const SignInPage = () => {
             </svg>
             Google দিয়ে চালিয়ে যান
           </button>
-          <button className="btn bg-black text-white border-black">
+          <button
+            onClick={GithubsignIn}
+            className="btn bg-black text-white border-black"
+          >
             <svg
               aria-label="GitHub logo"
               width="16"

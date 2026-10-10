@@ -3,6 +3,7 @@ import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Navber from "@/component/navber/Navber";
 import Footer from "@/component/Footer";
+import { ToastContainer } from "react-toastify";
 
 const hind_siliguri = Hind_Siliguri({
   variable: "--font-hind_siliguri",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navber />
         <main>{children}</main>
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   );
