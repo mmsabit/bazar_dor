@@ -26,8 +26,8 @@ const ProductPage = async ({
         <MdNavigateNext />
         <span>{product.nameBn}</span>
       </div>
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 flex justify-between font-sans my-6">
-        <div className="flex items-center space-x-4">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 lg:p-8 p-4 gap-5 flex lg:flex-row flex-col lg:justify-between justify-center items-center font-sans my-6">
+        <div className="flex items-center space-x-4 lg:w-fit w-full">
           <div className="w-20 h-20 bg-[#f0f5f0] rounded-xl flex items-center justify-center p-2 shrink-0 text-5xl">
             {product.image}
           </div>
@@ -45,7 +45,7 @@ const ProductPage = async ({
             </p>
           </div>
         </div>
-        <div className=" p-5 bg-[#f0f5f0] rounded-xl flex flex-col items-center justify-center gap-0.5">
+        <div className=" p-5 bg-[#f0f5f0] rounded-xl flex flex-col items-center justify-center gap-0.5 lg:w-fit w-full">
           <p className="text-sm">আজকের দাম</p>
           <h5 className="text-3xl font-bold text-gray-900">{toBanglaNumber(product.today)}</h5>
           <p className="text-sm">টাকা / { translateUnit(product.unit)}</p>
