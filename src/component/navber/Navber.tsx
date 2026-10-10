@@ -61,8 +61,8 @@ const Navber = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box right-0 mt-3 w-52 p-2 shadow"
             >
               <NavItem />
-              <li>
-             <NavBtn />
+              <li className="">
+                <NavBtn />
               </li>
             </ul>
           </div>

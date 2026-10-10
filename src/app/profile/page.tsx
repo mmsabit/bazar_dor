@@ -55,8 +55,8 @@ const ProfilePage = () => {
           আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।
         </p>
       </div>
-      <div className="flex items-center justify-between w-full max-w-4xl p-4 bg-[#f8faf9] border border-gray-200 rounded-2xl shadow-sm mb-6">
-        <div className="flex items-center space-x-4">
+      <div className="flex lg:flex-row flex-col gap-5 items-center justify-between w-full max-w-4xl p-4 bg-[#f8faf9] border border-gray-200 rounded-2xl shadow-sm mb-6">
+        <div className="flex items-center space-x-4 lg:w-fit w-full">
           <Image
             src={
               user?.image
@@ -78,7 +78,7 @@ const ProfilePage = () => {
 
         <button
           onClick={handleSignOut}
-          className="flex items-center space-x-1.5 px-4 py-2 border border-red-500 text-red-500 rounded-xl hover:bg-red-50 transition-colors duration-200 font-medium text-sm cursor-pointer"
+          className="flex items-center space-x-1.5 px-4 py-2 border border-red-500 text-red-500 rounded-xl hover:bg-red-50 transition-colors duration-200 font-medium text-sm cursor-pointer lg:w-fit w-fullw"
         >
           <TbArrowBack size={16} />
           <span>সাইন আউট</span>

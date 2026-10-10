@@ -37,7 +37,7 @@ const HomeProduct = async () => {
             ))}
           </div>
         </div>
-        <div className="my-10">
+        <div className="my-10" id="allProduct">
           <h3 className="flex items-center text-[20px] font-bold text-nowrap">
             সব পণ্য
           </h3>

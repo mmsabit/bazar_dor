@@ -19,6 +19,7 @@ const SignInPage = () => {
       email: user.user_email,
       password: user.user_password,
       callbackURL: "/",
+      rememberMe: true,
     });
 
     if (data) {
@@ -97,7 +98,7 @@ const SignInPage = () => {
   return (
     <div className="flex min-h-[90vh] flex-col items-center justify-center">
       <h2 className="text-3xl font-bold mb-2">সাইন ইন</h2>
-      <p className="text-lg text-[#1d271f9f] mb-6">
+      <p className="text-sm text-[#1d271f9f] mb-6 w-9/10 text-center">
         বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
       </p>
       <fieldset className="fieldset bg-[#fafcfa] border-base-300 rounded-box w-9/10 max-w-115 border p-6">
@@ -108,6 +109,7 @@ const SignInPage = () => {
             className="input w-full"
             placeholder="আপনার ইমেইল"
             name="user_email"
+            required
           />
 
           <label className="block text-[14px] mt-3">পাসওয়ার্ড</label>

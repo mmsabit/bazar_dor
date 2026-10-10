@@ -116,7 +116,7 @@ const SignUpPage = () => {
   return (
     <div className="flex min-h-[90vh] flex-col items-center justify-center py-20">
       <h2 className="text-3xl font-bold mb-2">অ্যাকাউন্ট তৈরি করুন</h2>
-      <p className="text-lg text-[#1d271f9f] mb-6">
+      <p className="text-sm text-center text-[#1d271f9f] mb-6">
         বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
       </p>
       <fieldset className="fieldset bg-[#fafcfa] border-base-300 rounded-box w-9/10 max-w-115 border p-6">
@@ -127,6 +127,7 @@ const SignUpPage = () => {
             type="text"
             className="input w-full"
             placeholder="আপনার নাম"
+            required
           />
 
           <label className="block text-[14px] mt-3 ">ইমেইল</label>
@@ -135,6 +136,7 @@ const SignUpPage = () => {
             className="input w-full"
             placeholder="আপনার ইমেইল"
             name="user_email"
+            required
           />
 
           <label className="block text-[14px] mt-3">পাসওয়ার্ড</label>
@@ -144,6 +146,7 @@ const SignUpPage = () => {
               className="input w-full"
               placeholder="পাসওয়ার্ড দিন"
               name="user_password"
+              required
             />
             <button
               className="absolute right-3 top-3 cursor-pointer"
@@ -162,6 +165,7 @@ const SignUpPage = () => {
               className="input w-full"
               placeholder="পাসওয়ার্ড নিশ্চিত করুন"
               name="user_confirm_password"
+              required
             />
             <button
               className="absolute right-3 top-3 cursor-pointer"
@@ -178,6 +182,7 @@ const SignUpPage = () => {
             className="input w-full"
             placeholder="ফটোর লিঙ্ক দিন"
             name="user_photo"
+            required
           />
 
           <button type="submit" className="btn text-white py-5 bg-[#05893E] w-full mt-4">

@@ -26,7 +26,7 @@ const NavBtn = () => {
   const user = session?.user;
   if (user) {
     return (
-      <div className="dropdown dropdown-hover">
+      <div className="dropdown dropdown-hover focus:bg-transparent">
         <div tabIndex={0} role="button" className="flex items-center gap-3">
           <Image
             src={
@@ -43,7 +43,7 @@ const NavBtn = () => {
         </div>
         <div
           tabIndex={0}
-          className="dropdown-content card card-sm bg-base-100 z-1 w-64 shadow-md mt-1"
+          className="dropdown-content card card-sm bg-base-100 z-1 w-64 shadow-md mt-1 right-0"
         >
           <div className="card-body p-3">
             <div>
