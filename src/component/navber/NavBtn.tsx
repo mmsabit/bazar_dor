@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { IoPersonSharp } from "react-icons/io5";
 import { TbArrowBack } from "react-icons/tb";
 import { toast, Bounce } from "react-toastify";
@@ -20,6 +21,7 @@ const NavBtn = () => {
       theme: "light",
       transition: Bounce,
     });
+    redirect("/sign-in")
   };
 
   const { data: session } = authClient.useSession();
