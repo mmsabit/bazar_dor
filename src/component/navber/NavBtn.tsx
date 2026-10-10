@@ -28,12 +28,6 @@ const NavBtn = () => {
     return (
       <div
         className="dropdown dropdown-hover focus:bg-transparent bg-transparent"
-        onClick={() => {
-          const activeElement = document.activeElement;
-          if (activeElement instanceof HTMLElement) {
-            activeElement.blur();
-          }
-        }}
       >
         <div tabIndex={0} role="button" className="flex items-center gap-3">
           <Image
@@ -59,7 +53,12 @@ const NavBtn = () => {
               <p>{user.email}</p>
             </div>
 
-            <div className="mt-2 flex flex-col gap-2">
+            <div className="mt-2 flex flex-col gap-2" onClick={() => {
+        const activeElement = document.activeElement;
+        if (activeElement instanceof HTMLElement) {
+          activeElement.blur();
+        }
+      }}>
               <Link
                 href={`/profile`}
                 className="text-[14px] flex items-center gap-1"
@@ -67,7 +66,13 @@ const NavBtn = () => {
                 <IoPersonSharp size={16} /> প্রোফাইল
               </Link>
               <button
-                onClick={handleSignOut}
+                onClick={() => {
+                  handleSignOut();
+                  const activeElement = document.activeElement;
+                  if (activeElement instanceof HTMLElement) {
+                    activeElement.blur();
+                  }
+                }}
                 className="w-fit flex items-center text-[#D03739] gap-1 cursor-pointer"
                 type="button"
               >
