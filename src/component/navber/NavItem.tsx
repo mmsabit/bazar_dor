@@ -10,7 +10,7 @@ const NavItem = async () => {
   return (
     <div className="flex gap-2 lg:flex-row flex-col">
         <li>
-          <Link href={`/`}>হোম</Link>
+          <Link href={`/`}>🏠 হোম</Link>
         </li>
       {data.map((cat:catetoryType, i:number) => (
         <li key={i}>
