@@ -5,9 +5,7 @@ const Count = ({ products }: { products: MarketType[] }) => {
   const max = Math.max(...products.map((p) => p.max));
   const min = Math.min(...products.map((p) => p.min));
 
-  const avg =
-    products.reduce((total, p) => total + (p.min + p.max) / 2, 0) /
-    products.length;
+  const avg =(max+min)/2;
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
       {/* সর্বনিম্ন দাম */}
