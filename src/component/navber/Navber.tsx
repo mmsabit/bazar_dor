@@ -14,7 +14,7 @@ const Navber = () => {
   });
   return (
     <div className="bg-[#fafcfa]">
-      <div className="navbar max-w-7xl mx-auto w-full">
+      <div className="navbar xl:max-w-7xl max-w-9/10 mx-auto w-full">
         <div className="navbar-start">
           <div className="flex gap-3">
             <Link href="/" aria-label="Home page">
@@ -72,7 +72,7 @@ const Navber = () => {
         </div>
       </div>
       <div className="border border-x-0 border-y-base-200">
-        <div className="lg:max-w-7xl max-w-9/10 w-full mx-auto hidden lg:flex">
+        <div className="xl:max-w-7xl max-w-9/10 w-full mx-auto hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <NavItem />
           </ul>

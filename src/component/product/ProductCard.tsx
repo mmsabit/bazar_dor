@@ -9,13 +9,13 @@ const ProductCard = ({ product }: { product: ProductType }) => {
   return (
     <div>
       <Link href={`/product/${product.id}`}>
-      <div className=" w-full mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-5 flex flex-col justify-between font-sans">
+      <div className=" w-full mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-5 flex flex-col justify-between">
         <div className="flex items-center space-x-4">
           <div className="w-16 h-16 bg-emerald-50/60 rounded-xl flex items-center justify-center p-2 shrink-0 text-2xl">
             {product.image}
           </div>
           <div>
-            <h2 className="text-xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-xl font-bold text-gray-900 ">
               {product.nameBn}
             </h2>
             <p className="text-sm text-gray-500 mt-0.5">প্রতি { translateUnit(product.unit)}</p>

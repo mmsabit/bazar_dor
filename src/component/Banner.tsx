@@ -13,7 +13,7 @@ const Banner = () => {
     <div>
       <div className="xl:max-w-7xl mx-auto w-full max-w-9/10 bg-[#fafcfa] my-10 rounded-3xl p-5 flex lg:flex-row flex-col gap-5 justify-between items-center">
         <div className="w-full flex flex-col justify-center items-center lg:items-start">
-          <h6 className="text-[#047F39] text-[12px] lg:text-[16px] font-medium bg-[#e1f1e7] px-3 py-1 rounded-full w-fit">
+          <h6 className="text-[#047F39] text-[12px] lg:text-[16px] font-light bg-[#e1f1e7] px-3 py-1 rounded-full w-fit">
             {currentDate}
           </h6>
           <h1 className="lg:text-[36px] text-[20px] font-bold mt-2">
